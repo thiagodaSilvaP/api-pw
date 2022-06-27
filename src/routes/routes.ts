@@ -1,9 +1,8 @@
 import { Router, Request, Response } from "express";
+import { loansRouter } from "./Loans/loansRouter";
 
-const loansRouter = Router()
+const router = Router()
 
-loansRouter.get('/', (request: Request, response: Response): Response => {
-    return response.send('hELLO')
-})
+router.use('/loans', loansRouter)
 
-export {loansRouter}
+export {router}

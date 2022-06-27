@@ -1,10 +1,14 @@
-import express from 'express'
-import { loansRouter } from './routes/routes'
+import express from "express";
+import { sequelize } from "./database/connection";
+import { Loans } from "./models/Loans";
+import { LoansRepository } from "./repositories/LoansRepository";
+import { router } from "./routes/routes";
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(express.urlencoded())
-app.use(loansRouter)
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(router);
 
-app.listen(8080, () => console.log('Server is running'))
+
+app.listen(8080, () => console.log("Server is running"));

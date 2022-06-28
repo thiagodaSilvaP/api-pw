@@ -6,6 +6,10 @@ class LoansRepository implements IRepository {
     async create({ data }: ICreateDTO): Promise<LoanData> {
         return await this.client.create({...data})
     }
+
+    async read(): Promise<LoanData[]> {
+        return await this.client.findAll()
+    }
 }
 
 export {LoansRepository}

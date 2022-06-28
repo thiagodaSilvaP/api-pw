@@ -1,13 +1,12 @@
 import express from "express";
-import { sequelize } from "./database/connection";
-import { Loans } from "./models/Loans";
-import { LoansRepository } from "./repositories/LoansRepository";
+import cors from 'cors';
 import { router } from "./routes/routes";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(cors())
 app.use(router);
 
 

@@ -10,7 +10,7 @@ app.use(express.urlencoded());
 app.use(cors())
 app.use(router);
 
-new Loans()
+new Loans().loans.create({id: 2,book: 'Odisseia',deliveryDate: '2022-06-30',situation: false,student: 'Rafael'})
 
 
 app.listen(8080, () => console.log("Server is running"));

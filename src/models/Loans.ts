@@ -5,7 +5,7 @@ interface ILoans extends Model<InferAttributes<ILoans>, InferCreationAttributes<
     id: number;
     student: string;
     book: string;
-    deliveryDate: Date
+    deliveryDate: string;
     situation: boolean;
 }
 
@@ -32,7 +32,7 @@ class Loans {
                 allowNull: false
             },
             deliveryDate: {
-                type: DataTypes.DATE,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             situation: {

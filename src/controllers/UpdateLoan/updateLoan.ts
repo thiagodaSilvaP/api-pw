@@ -12,7 +12,7 @@ export const updateLoan = async (request: Request ,response: Response ): Promise
     return await new LoansRepository(new Loans().loans).update({data: {
         student,
         book,
-        deliveryDate: new Date(deliveryDate),
+        deliveryDate,
         situation: false
     }, id: id})
 }

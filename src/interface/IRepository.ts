@@ -2,7 +2,7 @@ interface LoanData {
     id: number;
     student: string,
     book: string,
-    deliveryDate: Date,
+    deliveryDate: string,
     situation: boolean
 }
 interface ICreateDTO {

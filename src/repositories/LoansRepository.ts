@@ -7,6 +7,11 @@ import {
   LoanData,
 } from "../interface/IRepository";
 
+interface completeOrIncompleteLoanDTO {
+  id: number,
+  data: Pick<LoanData, 'situation'>
+}
+
 class LoansRepository implements IRepository {
   constructor(private client: any) {}
 
@@ -28,6 +33,15 @@ class LoansRepository implements IRepository {
   }
   async delete({ id }: IDeleteDTO) {
     return await this.client.destroy({ where: { id: id } });
+  }
+
+  async completeOrIncompleteLoan({id,data}: completeOrIncompleteLoanDTO) {
+    return await this.client.update(
+      { ...data },
+      {
+        where: { id: id },
+      }
+    );
   }
 }
 

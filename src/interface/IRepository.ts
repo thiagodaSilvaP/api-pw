@@ -2,7 +2,8 @@ interface LoanData {
     id: number;
     student: string,
     book: string,
-    deliveryDate: Date
+    deliveryDate: Date,
+    situation: boolean
 }
 interface ICreateDTO {
     data: Omit<LoanData, 'id'>;

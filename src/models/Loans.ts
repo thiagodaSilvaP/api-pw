@@ -6,6 +6,7 @@ interface ILoans extends Model<InferAttributes<ILoans>, InferCreationAttributes<
     student: string;
     book: string;
     deliveryDate: Date
+    situation: boolean;
 }
 
 class Loans {
@@ -32,6 +33,10 @@ class Loans {
             },
             deliveryDate: {
                 type: DataTypes.DATE,
+                allowNull: false
+            },
+            situation: {
+                type: DataTypes.BOOLEAN,
                 allowNull: false
             }
         }, {

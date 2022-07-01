@@ -4,7 +4,7 @@ import { loansRouter } from "./Loans/loansRouter";
 const router = Router()
 
 router.get('/', (request: Request, response: Response) => {
-    return response.send({message: 'Oi'})
+    return response.send({message: 'oi'})
 })
 router.use('/loans', loansRouter)
 

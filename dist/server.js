@@ -13,4 +13,4 @@ app.use(express_1.default.urlencoded());
 app.use((0, cors_1.default)());
 app.use(routes_1.router);
 new Loans_1.Loans();
-app.listen(8080, () => console.log("Server is running"));
+app.listen(process.env.PORT || 3000, () => console.log("Server is running"));
